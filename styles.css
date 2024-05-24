@@ -1,0 +1,203 @@
+body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    padding-top: 50px;
+}
+.container {
+    max-width: 800px;
+    margin: auto;
+}
+.search-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.search-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.search-box input[type="text"] {
+    border-radius: 20px;
+    padding: 10px 20px;
+    border: 2px solid transparent;
+    outline: none;
+    width: 70%;
+    margin-right: 10px;
+    transition: border-color 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+.search-box input[type="text"].has-content {
+    border-color: #ffffff;
+}
+.search-box input[type="text"]:focus {
+    border-color: #0000ff;
+}
+.search-box input[type="text"]:hover {
+    border-color: #ff0000;
+}
+.search-box input[type="text"]:focus:hover {
+    border-color: #800080;
+}
+.search-box button {
+    border-radius: 20px;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    background-color: #ff0000;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.search-box button:hover {
+    background-color: #b30000;
+}
+.movie-details {
+    border: 2px solid #00ff00;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 20px;
+    background-color: #000000;
+    transition: box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+.movie-details:hover {
+    box-shadow: 0 0 10px #00ff00;
+}
+.movie-details img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto;
+}
+.movie-details h2 {
+    margin-top: 10px;
+    font-size: 24px;
+    text-align: left;
+}
+.movie-details p {
+    font-size: 16px;
+    text-align: left;
+    margin: 5px 0;
+}
+.most-searched-movies {
+    margin-top: 30px;
+}
+.most-searched-movies h2 {
+    margin-bottom: 15px;
+}
+.most-searched-movie {
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+}
+.most-searched-movie img {
+    width: 100%;
+    max-width: 200px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.most-searched-movie:hover img {
+    transform: scale(1.1);
+}
+.movie-name {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+    padding: 5px;
+    text-align: center;
+    width: 100%;
+    border-radius: 5px;
+    transition: bottom 0.3s ease;
+    opacity: 0;
+}
+.most-searched-movie:hover .movie-name {
+    bottom: 0;
+    opacity: 1;
+}
+.loading-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+.loading-spinner {
+    border: 4px solid #ffffff;
+    border-radius: 50%;
+    border-top: 4px solid #ff0000;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+.loading-text {
+    color: #ffffff;
+    font-size: 18px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.movie-details iframe {
+    width: 80%;
+    height: 280px;
+    margin: 0 auto;
+    display: block;
+}
+
+.movie-details iframe:hover {
+    transform: scale(1.1);
+}
+
+
+@keyframes flickerAnimation {
+    0% { opacity: 0.8; }
+    50% { opacity: 1; }
+    100% { opacity: 0.8; }
+}
+
+
+.cine-search-text {
+    font-family: 'Netflix Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    color: #fff;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    animation: flickerAnimation 3s infinite;
+    z-index: 999; 
+}
+
+
+@media (max-width: 576px) {
+    .cine-search-text {
+        font-size: 24px; 
+        top: 10px; 
+        left: 10px; 
+    }
+    .search-container {
+        margin-top: 30px; 
+}
+
+}
